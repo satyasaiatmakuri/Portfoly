@@ -8,7 +8,7 @@ const skillRoutes = require("./routes/SkillRoutes");
 const userRoutes = require("./routes/UserRoutes");
 const messageRoutes = require("./routes/MessageRoutes");
 const mongoose = require("mongoose");
-require("dotenv").config();
+require("dotenv").config({ path: "server/config/config.env" });
 const bodyParser = require("body-parser");
 
 const app = express();
