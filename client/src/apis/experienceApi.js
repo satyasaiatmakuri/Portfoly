@@ -1,17 +1,17 @@
 import api from "./serverApi";
 
 export const addExperienceApi = (experience) => {
-  return api.post("/experiences/", experience);
+  return api.post("/api/experiences/", experience);
 };
 
 export const getExperiencesApi = () => {
-  return api.get("/experiences/");
+  return api.get("/api/experiences/");
 };
 
 export const deleteExperienceApi = (experienceId) => {
-  return api.delete(`/experiences/${experienceId}`);
+  return api.delete(`/api/experiences/${experienceId}`);
 };
 
 export const updateExperienceApi = (experienceId, experience) => {
-  return api.put(`/experiences/${experienceId}`, experience);
+  return api.put(`/api/experiences/${experienceId}`, experience);
 };

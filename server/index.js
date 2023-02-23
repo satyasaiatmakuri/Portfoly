@@ -15,13 +15,13 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use("/educations", educationRoutes);
-app.use("/experiences", experienceRoutes);
-app.use("/languages", languageRoutes);
-app.use("/projects", projetRoutes);
-app.use("/skills", skillRoutes);
-app.use("/users", userRoutes);
-app.use("/messages", messageRoutes);
+app.use("/api/educations", educationRoutes);
+app.use("/api/experiences", experienceRoutes);
+app.use("/api/languages", languageRoutes);
+app.use("/api/projects", projetRoutes);
+app.use("/api/skills", skillRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/messages", messageRoutes);
 
 app.use("/uploads", express.static("uploads"));
 
@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === 'PRODUCTION') {
   //*Set static folder up in production
   app.use(express.static('client/build'));
 
-  app.get('/', (req,res) => res.sendFile(path.resolve(__dirname, 'client', 'build','index.html')));
+  app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, 'client', 'build','index.html')));
 }
 
 app.listen(process.env.PORT, () =>

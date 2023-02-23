@@ -1,7 +1,7 @@
 import api from "./serverApi";
 
 export const getMessagesApi = () => {
-  return api.get("/messages/", {
+  return api.get("/api/messages/", {
     headers: {
       Authorization: `Bearer ${
         JSON.parse(localStorage.getItem("userData")).token
@@ -11,5 +11,5 @@ export const getMessagesApi = () => {
 };
 
 export const updateMessageApi = (messageId, message) => {
-  return api.put(`/messages/${messageId}`, message);
+  return api.put(`/api/messages/${messageId}`, message);
 };

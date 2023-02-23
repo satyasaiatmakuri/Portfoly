@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Navbar/styles.css";
-import logo from "../../../assets/images/basry-logo.png";
+import logo from "../../../assets/images/AS_free-file.png";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ onLinkClick }) => {
@@ -22,7 +22,7 @@ const Navbar = ({ onLinkClick }) => {
     >
       <div className="container-fluid mx-3">
         <Link className="navbar-brand" to="/">
-          <img alt="logo" src={logo} width="100" />
+          <img alt="logo" src={logo} width="50" height="50"/>
         </Link>
         <button
           className="navbar-toggler costmusetoggler shadow-none"
