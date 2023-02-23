@@ -15,6 +15,13 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+if (process.env.NODE_ENV === 'PRODUCTION') {
+  //*Set static folder up in production
+  app.use(express.static('client/build'));
+
+  app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, 'client', 'build','index.html')));
+}
+
 app.use("/educations", educationRoutes);
 app.use("/experiences", experienceRoutes);
 app.use("/languages", languageRoutes);
